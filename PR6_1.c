@@ -1,19 +1,28 @@
+/*
+Q.1 Write a Program to check whether a string is a palindrome or not without using string functions.
+For example,
+Input:
+Enter your Desired String : nayan
+
+The Above String is Palindrome.
+*/
 #include<stdio.h>
-#include<string.h>
 void main(){
-	char alpha[100];
-	int i,len,place=0;
-	printf("Enter your Desired String: ");
+	int i,len=0,sum=1;
+	char alpha[50];
+	printf("Enter your Desired String : ");
 	gets(alpha);
-	len=strlen(alpha);
+	for(i=0;alpha[i]!=NULL;i++){
+		len++;
+	}
 	for(i=0;i<len/2;i++){
-		if(alpha[i]==alpha[len-i-1]){
-			place++;
+		if(alpha[i]!=alpha[len-1-i]){
+			sum=0;
 		}
 	}
-	if(place==i){
-		printf("This String is Palindrome");
+	if(sum==1){
+		printf("\nThe Above String is Palindrome.");
 	}else{
-		printf("This String is not Palindrome");
+		printf("\nThe Above String is not Palindrome");
 	}
 }
